@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>This is the main page</h3>
+<form>
+	What do you want to do?
+	<br>
+	<label>
+		Take survey
+		<input type="radio" name="menu" value="survey">
+	</label>
+	<label>
+		Play game
+		<input type="radio" name="menu" value="game">
+	</label>
+	<br>
+	<input type="submit" value="go">
+</form>
+{% endblock %}
