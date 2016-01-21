@@ -2,7 +2,7 @@ import webapp2
 import jinja2
 
 env = jinja2.Environment(loader=jinja2.PackageLoader("intro", "templates"),
-                         autoescape=True)
+                         autoescape=True,)
 
 class PageHandler(webapp2.RequestHandler):
 	def write(self, *a, **kw):
@@ -15,23 +15,16 @@ class PageHandler(webapp2.RequestHandler):
 	def render(self, template, **params):
 		self.write(self.render_str(template, **params))
 
-class Survey(PageHandler):
-	def get(self):
-		page = self.request.get("page")
-		if not page:
-			page = 1
-		self.render("survey.html", page=page)
-
 class MainPage(PageHandler):
 	def get(self):
-		menu = self.request.get("menu")
-		if menu == "survey":
-			self.redirect("survey")
-		elif menu == "game":
-			self.redirect("game")
 		self.render("mainpage.html")
+
+# FIXME: get method not working
+class LessonPage(PageHandler):
+	def get(self):
+		print "!!!!!!!!!!!!!!!!"
+		lesson = self.request.get("lesson")
 
 app = webapp2.WSGIApplication([
 	('/', MainPage),
-	('/survey', Survey),
 	], debug=True)

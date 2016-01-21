@@ -1,19 +1,47 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>This is the main page</h3>
-<form>
-	What do you want to do?
-	<br>
-	<label>
-		Take survey
-		<input type="radio" name="menu" value="survey">
-	</label>
-	<label>
-		Play game
-		<input type="radio" name="menu" value="game">
-	</label>
-	<br>
-	<input type="submit" value="go">
+<div class="main">
+	<h3 class="list_header">Choose lesson to review</h3>
+	<div class="link-container">
+		<div class="link_box e1">
+			<a href="lesson/lesson1.html">
+				<span class="empty"></span>
+			</a>
+			<div class="link_box_content">
+				The Web &amp; HTML:<br>
+				The Basics
+			</div>
+		</div>
+		<div class="link_box e2">
+			<a href="lesson/lesson2/">
+				<span class="empty"></span>
+			</a>
+			<div class="link_box_content">
+				HTML &amp; CSS:<br>
+				An Overview
+			</div>
+		</div>
+		<div class="link_box e3">
+			<a href="lesson/lesson4_1/">
+				<span class="empty"></span>
+			</a>
+			<div class="link_box_content">
+				HTML &amp; Server:<br>
+				Response and Request
+			</div>
+		</div>
+		<div class="link_box e4">
+			<a href="lesson/lesson4_2/">
+				<span class="empty"></span>
+			</a>
+			<div class="link_box_content">
+				Forms
+			</div>
+		</div>
+</div>
+<form action="/lesson">
+	<input type="submit" value="1">
 </form>
+
 {% endblock %}
