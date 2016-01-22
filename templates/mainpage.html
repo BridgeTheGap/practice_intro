@@ -1,20 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="title_box main bottom_align root_bg">
+	<h1 class="v_margin_none white">Lesson Notes</h1>
+</div>
+
 <div class="main">
-	<h3 class="list_header">Choose lesson to review</h3>
+	<h3 class="root">Choose lesson to review</h3>
 	<div class="link-container">
-		<div class="link_box e1">
-			<a href="lesson/lesson1.html">
-				<span class="empty"></span>
-			</a>
+		<div class="link_box e1_bg">
+			<a href="notes?lesson=1"><span class="empty"></span></a>
 			<div class="link_box_content">
 				The Web &amp; HTML:<br>
 				The Basics
 			</div>
 		</div>
-		<div class="link_box e2">
-			<a href="lesson/lesson2/">
+		<div class="link_box e2_bg">
+			<a href="notes?lesson=2">
 				<span class="empty"></span>
 			</a>
 			<div class="link_box_content">
@@ -23,7 +25,7 @@
 			</div>
 		</div>
 		<div class="link_box e3">
-			<a href="lesson/lesson4_1/">
+			<a href="notes?lesson=4_1">
 				<span class="empty"></span>
 			</a>
 			<div class="link_box_content">
@@ -32,16 +34,17 @@
 			</div>
 		</div>
 		<div class="link_box e4">
-			<a href="lesson/lesson4_2/">
+			<a href="notes?lesson=4_2">
 				<span class="empty"></span>
 			</a>
 			<div class="link_box_content">
 				Forms
 			</div>
 		</div>
+	</div>
 </div>
-<form action="/lesson">
-	<input type="submit" value="1">
-</form>
+<div class="back root_bg">
+	<span class="main white">Josh Park</span>
+</div>
 
 {% endblock %}

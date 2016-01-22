@@ -1,21 +1,57 @@
-Lesson 1 - The Basics of the Web and HTML
+{% extends "base.html" %}
+{% block content %}
 
-World Wide Web - Collection of HTMLs (HyperText Markup Language)
-HTMLs are linked through HyperLinks
+<div class="title_box main bottom_align e1_bg">
+	<h1 class="title v_margin_none white">
+		The Web &amp; HTML:<br>
+		The Basics
+	</h1>
+</div>
 
-[HTML]
-1. Components
-	- text content: what you see
-	- markup: what it looks like (e.g. <b></b>)
-	- references to other documents: images, videos, etc.
-	- links to other pages
-2. HTML attributes
-	- &lt;tag attribute="value"&gt;content</tag>
-	- <a href="link"></a>
-	- <img src="url" alt="text"> (VOID tag: no content, no closing tag)
-3. Tags
-	- <br>: break (inline)
-	- <p>content</p>: paragraph (block)
-4. Elements
-	- <span>text</span> (inline)
-	- <div>text</div> (block)
+<div class="main">
+	<h3 class="e1">
+		World Wide Web
+	</h3>
+	<p>
+		The World Wide Web (www) is a collection of HTMLs (HyperText Markup Language).<br>
+		HTMLs are linked through HyperLinks.<br>
+	</p>
+
+	<h3 class="e1">
+		HTML
+	</h3>
+	<ol>
+		<li class="v_margin_light">Components
+			<ul>
+				<li>text content: what you see</li>
+				<li>markup: what it looks like (e.g. &lt;b&gt;&lt;/b&gt;)</li>
+				<li>references to other documents: images, videos, etc.</li>
+				<li>links to other pages</li>
+			</ul>
+		</li>
+		<li class="v_margin_light">HTML attributes
+			<ul>
+				<li>&lt;tag attribute="value"&gt;content&lt;/tag&gt;</li>
+				<li>&lt;a href="link"&gt;&lt;/a&gt;</li>
+				<li>&lt;img src="url" alt="text"&gt; (VOID tag: no content, no closing tag)</li>
+			</ul>
+		</li>
+		<li class="v_margin_light">Tags
+			<ul>
+				<li>&lt;br&gt;: break (inline)</li>
+				<li>&lt;p&gt;content&lt;/p&gt;: paragraph (block)
+			</ul>
+		</li>
+		<li class="v_margin_light">Elements
+			<ul>
+				<li>&lt;span&gt;text&lt;/span&gt; (inline)</li>
+				<li>&lt;div&gt;text&lt;/div&gt; (block)
+			</ul>
+		</li>
+	</ol>
+</div>
+<div class="back e1_bg">
+	<a class="main white" href="/">Back to Main</span></a>
+</div>	
+
+{% endblock %}
