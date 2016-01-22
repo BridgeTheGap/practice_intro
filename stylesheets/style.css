@@ -13,17 +13,20 @@ body {
 
 h1 {
 	font-size: 250%;
-	font-weight: 500;	
+	font-weight: 400;	
+}
+
+a {
+	color: #9C27B0;	
 }
 
 .title_box {
-	display: flex;
 	height: 160px;
 	width: 100%;
 	padding-bottom: 20px;
 }
 
-.bottom_align {
+.v_align_bottom {
 	display: flex;
 	align-items: flex-end;	
 }
@@ -76,12 +79,11 @@ h1 {
 }
 
 .back {
-	align-items: center;
-	bottom: 0;
+	position: fixed;bottom: 0;
 	display: flex;
+	align-items: center;
 	height: 50px;
 	width: 100%;
-	position: fixed;
 }
 
 .root_bg {

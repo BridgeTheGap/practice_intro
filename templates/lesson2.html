@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="title_box e2_bg v_align_bottom">
+	<h1 class="v_margin_none main white">HTML &amp; CSS</h1>
+</div>
+
+<div class="main">
+	<h3 class="e2">HTML Tag</h3>
+		<ul>
+			<li>The browser turns HTML tags into elements that form a tree (DOM).</li>
+			<li>Element = &lt;tag&gt; content &lt;/tag&gt;</li>
+			<li>The type/name of tag decides what element will be created.</li>
+			<li>A tag can have attributes with values (e.g. &lt;h1 class = "article"&gt;)</li>
+		</ul>
+	<h3 class="e2">CSS</h3>
+		<ul>
+			<li>Decides the style the page will be presented with.<br>
+				&lt;h1 class = "article"&gt; ... &lt;/h1&gt; means "all h1 elements that belong to the class 'article' should have the following style."</li>
+			<li>The HTML document can provide the browser with information about what CSS file to use and the location of the CSS file.</li>
+			<li>In order to assign a style to an element, assign a class attribute.</li>
+		</ul>
+	<h3 class="e2">Using CSS</h3>
+		<ul>
+			<li>Styles can be assigned by tags or classes.</li>
+				<ul>
+					<li>p { attribute: value} # This is for tags</li>
+					<li>.class { attribute: value} # This is for classes</li>
+					<li>* # Wildcard character, applying the style to all elements in HTML</li>
+				</ul>
+			<li>Attributes</li>
+				<ul>
+					<li>display # Changes the layout</li>
+					<li>max-width # Values can be either percentage or px</li>
+				</ul>
+		</ul>
+	<h3 class="e2">Validation</h3>
+	<p>
+		Validate markups or css, to make sure they comply with the standards.<br>
+		<ul>
+			<li><a href="https://validator.w3.org/">Markup Validation</a><br></li>
+			<li><a href="https://jigsaw.w3.org/css-validator/">CSS Validation</a></li>
+		</ul>
+	</p>
+</div>
+
+<div class="back e2_bg">
+	<a class="main white" href="/">Back to Main</a>
+</div>
+
+{% endblock %}
