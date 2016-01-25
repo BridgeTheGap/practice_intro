@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="title_box e3_bg v_align_bottom">
+	<h1 class="main v_margin_none white">HTML &amp; Server:<br>Response and Request</h1>
+</div>
+<div class="main">
+	<h3 class="e3">HTML document structure</h3>
+	<pre>
+	&lt;!DOCTYPE HTML&gt;
+	&lt;html&gt;
+		&lt;head&gt;
+			&lt;title&gt;Title&lt;/title&gt;
+			&lt;!-- Other references such as CSS or JavaScript comes here --&gt;
+			&lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+			&lt;!-- The contents of this HTML pages come here --&gt;
+		&lt;/body&gt;
+	&lt;/html&gt;
+	</pre>
+	<h3 class="e3">URL (Uniform Resource Locator)</h3>
+	<ul>
+		<li>URL: The location of the machine you are accessing</li>
+		<li class="tab"># Example: http://www.udacity.com/
+			<ul class="tab">
+				<li>Protocol: http</li>
+				<li>Host/domain name/IP Adress: "www.udacity.com"</li>
+				<li>Path: "/"</li>
+			</ul>
+		</li>
+		<br>
+
+		<li>Query parameters (GET parameters)</li>
+		<li class="tab"># Example: ?p=1
+			<ul class="tab">
+				<li>Name: "p"</li>
+				<li>Value: "1"</li>
+			</ul>
+		</li>
+		<li class="tab">Query parameters can be chained with &amp;</li>
+		<br>
+
+		<li>Fragment</li>
+		<li class="tab">References a particular part of the page</li>
+		<li class="tab">Not sent to the server when making a request (just for browser)</li>
+		<li class="tab">Last component of a URL</li>
+		<br>
+
+		<li>Port</li>
+		<li class="tab"># Example: http://localhost:8080/</li>
+		<li class="tab">Default is 80</li>
+	</ul>
+	<h3 class="e3">HTTP (Hypertext Transfer Protocol)</h3>
+	<ul>
+		<li>Request line</li>
+		<li class="tab"># Example: GET /foo HTTP/1.1
+			<ul class="tab">
+				<li>Method: "GET", "POST", etc. (What type of request is made to the server)</li>
+				<li>Path: "/foo" (The document that is requested)</li>
+				<li>Version: "HTTP/1.1", "HTTP/1.0"</li>
+			</ul>
+		</li>
+		<br>
+
+		<li>Request line header</li>
+		<li class="tab"># Example:
+			<ul class="tab">
+				<li>Host: www.example.com</li>
+				<li>User-Agent: chrome</li>
+			</ul>
+		</li>
+		<li class="tab">Host: A web server could be hosting multiple names</li>
+		<li class="tab">User-Agent: What type of machine is making the request</li>
+		<br>
+
+		<li>Response Status line</li>
+		<li class="tab"># Example: HTTP/1.1 200 OK</li>
+		<br>
+		<li class="tab">Status code: 200, 404, etc.</li>
+		<li class="tab">Reason phrase: English description of the status code</li>
+		<li class="tab">Common status codes:</li>
+			<ul class="tab">
+				<li>200		OK				(success)</li>
+				<li>302		Found 			(document is located somewhere else)</li>
+				<li>404		Not Found 		(document wasn't found)</li>
+				<li>500		Server Error	(server wasn't able to handle the request)</li>
+			</ul>
+		<br>
+
+		<li>Status line headers</li>
+		<li class="tab"># Example:	
+			<ul class="tab">
+				<li>Date: Tue Mar 2012 04:33:33 GMT</li>
+				<li>Server: Apache /2.2.3</li>
+				<li>Content-Type: text/html;</li>
+				<li>Content-Length: 1539</li>
+			</ul>
+			<br>
+		<li class="tab">Server: Similar to "User-Agent" header for Request. Name of the server</li>
+		<li class="tab">Content-Type: What kind of document is being returned</li>
+		<li class="tab">Content-Length: Not strictly required</li>
+	</ul>
+
+	<h3 class="e3">Servers</h3>
+	<ul>
+		<li>Type of responses: Static &amp; Dynamic
+			<ul class="tab">
+				<li>Static: Pre-written file (retrieved from the hard drive, etc.)</li>
+				<li>Dynamic: Made on the fly (web application)</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class="back e3_bg">
+	<a class="main white" href="/">Back to Main</a>
+</div>
+
+{% endblock %}

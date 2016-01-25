@@ -9,6 +9,7 @@
 
 body {
 	margin: 0px;
+	padding-bottom:60px;
 }
 
 h1 {
@@ -86,6 +87,10 @@ a {
 	width: 100%;
 }
 
+.tab {
+	list-style-type: none;
+}
+
 .root_bg {
 	background-color: #009688;
 }
@@ -110,8 +115,12 @@ a {
 	color: #F44336;
 }
 
-.e3 {
+.e3_bg {
 	background-color: #FF9800;
+}
+
+.e3 {
+	color: #FF9800;
 }
 
 .e4 {
