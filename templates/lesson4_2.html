@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="title_box e4_bg v_align_bottom">
+	<h1 class="main v_margin_none white">Forms</h1>
+</div>
+<div class="main">
+	<h3 class="e4">Attributes</h3>
+	<ul>
+		<li>action="URL": the URL to send the request</li>
+		<li>method="GET/POST": the method to use when making the request</li>
+	</ul>
+
+	<h3 class="e4">Element "Input"</h3>
+	<ul>
+		<li>name="value": Makes a query by the given name, with the value which was inside the text field</li>
+		<li>type="value": Make an input type
+			<ul class="tab">
+				<li>"text": Text field. Default parameter</li>
+				<li>"submit": Submit button</li>
+				<li>"password": Hides characters. Password is not sent securely. (Visible in the URL)</li>
+				<li>"checkbox": Sends "on" or removes the whole parameter including the name</li>
+				<li>"radio": Give the same name to grouped radio buttons to get desired behavior</li>
+			</ul>
+		<li>value="value": In conjunction with radio, this value is added to the name attribute</li>
+	</ul>
+
+	<h3 class="e4">Element "Label"</h3>
+	<p>By nesting input in the "Label" tag, a label is added on the left side of the input element.<br>
+	(Commonly used with radio buttons)</p>
+
+	<h3 class="e4">Element "Select"</h3>
+	<ul>
+		<li>name="value"</li>
+		<li>&lt;option value="value"&gt;OptionName&lt;/option&gt;: Shows OptionName in the drop-down, but submits "value"</li>
+	</ul>
+</div>
+
+<div class="back e4_bg">
+	<a class="main white" href="/">Back to Main</a>
+</div>
+
+{% endblock %}

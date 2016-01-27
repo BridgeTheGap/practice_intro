@@ -14,11 +14,15 @@ body {
 
 h1 {
 	font-size: 250%;
-	font-weight: 400;	
+	font-weight: 400;
 }
 
 a {
-	color: #9C27B0;	
+	color: #9C27B0;
+}
+
+td {
+	padding: 8px;
 }
 
 .title_box {
@@ -29,7 +33,7 @@ a {
 
 .v_align_bottom {
 	display: flex;
-	align-items: flex-end;	
+	align-items: flex-end;
 }
 
 .v_margin_none {
@@ -91,6 +95,24 @@ a {
 	list-style-type: none;
 }
 
+.side-by-side {
+	border: 1px solid #CFD8DC;
+	width: 60%;
+	height: 300px;
+}
+
+.table-header {
+	background-color: #F0F4C3;
+}
+
+.comment {
+	width: 80%
+}
+
+.comment_box {
+	display: flex;
+}
+
 .root_bg {
 	background-color: #009688;
 }
@@ -123,8 +145,20 @@ a {
 	color: #FF9800;
 }
 
+.e4_bg {
+	background-color: #FFB300;
+}
+
 .e4 {
-	background-color: #FFC107;
+	color: #FFB300;
+}
+
+.e5_bg {
+	background-color: #C0CA33;
+}
+
+.e5 {
+	color: #C0CA33;
 }
 
 .white {

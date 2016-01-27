@@ -1,5 +1,8 @@
 import webapp2
 import jinja2
+import cgi
+import urllib
+from google.appengine.ext import ndb
 
 env = jinja2.Environment(loader=jinja2.PackageLoader("intro", "templates"),
                          autoescape=True,)
@@ -24,8 +27,36 @@ class MainPage(PageHandler):
 
 class NotesPage(PageHandler):
 	def get(self):
-		print get_lesson_page(self.request.get("lesson"))
-		self.render(get_lesson_page(self.request.get("lesson")))
+		self.render_with_comment(get_lesson_page(self.request.get("lesson")))
+
+    # FIXME: Doesn't redirect very well....
+	def post(self):
+		comment = Comment(alias="Anonymous",
+						  comment=self.request.get("comment"))
+		comment.put()
+		self.redirect("/notes?lesson="+self.request.get("lesson"))
+
+	def render_with_comment(self, html):
+		response = self.render_str(html)
+
+		comment_start = response.find("<!-- Comments -->")
+		comment_end = response.find("<!-- Comment box -->")
+
+		notes = response[:comment_start]
+		comments = response[comment_start:comment_end]
+		textarea = response[comment_end:]
+
+		for comment in Comment.query().order(Comment.date).fetch():
+			comments += "<p>"+comment.comment+"</p>"
+
+		self.write(notes+comments+textarea)
+
+# Implement comment class
+class Comment(ndb.Model):
+	alias = ndb.StringProperty()
+	date = ndb.DateTimeProperty(auto_now=True)
+	comment = ndb.StringProperty(indexed=False)
+
 
 app = webapp2.WSGIApplication([
 	('/', MainPage),

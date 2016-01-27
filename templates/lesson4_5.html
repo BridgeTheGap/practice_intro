@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="title_box e5_bg v_align_bottom">
+  <h1 class="main white v_margin_none">GET vs. POST</h1>
+</div>
+
+<div class="main">
+  <br>
+  <table class="side-by-side">
+    <tr>
+      <th class="table-header">GET</th>
+      <th class="table-header">POST</th>
+    </tr>
+
+    <tr>
+      <td>parameters in URL</td>
+      <td>parameters in body</td>
+    </tr>
+
+    <tr>
+      <td>used for fetching documents</td>
+      <td>used for updating data</td>
+    </tr>
+
+    <tr>
+      <td>maximum URL length</td>
+      <td>no max length</td>
+    </tr>
+
+    <tr>
+      <td>okay to cache</td>
+      <td>not okay to cache</td>
+    </tr>
+
+    <tr>
+      <td>shouldn't change the server</td>
+      <td>oaky to change the server</td>
+    </tr>
+  </table>
+</div>
+
+<div class="back e5_bg">
+  <a class="main white" href="/">Back to Main</a>
+</div>
+
+{% endblock %}
