@@ -1,0 +1,9 @@
+<td class="comment_cell">
+  <div class="item">"{{ comment }}"</div>
+  <div class="item">{{ simple_date }}</div>
+  <form class="comment_delete" method="post" action="/delete">
+    <input type="submit" value="Delete">
+    <input type="hidden" name="date" value="{{ date }}">
+    <input type="hidden" name="lesson" value="{{ lesson }}">
+  </form>
+</td>

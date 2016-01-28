@@ -11,21 +11,22 @@
     {% block content %}
     {% endblock %}
     <br>
-    <hr class="comment" color="#E0E0E0">
+    <hr class="border" color="#E0E0E0">
     <br>
-    <div class="main">
+    <table class="main comment_table">
     <!-- Comments -->
 
     <!-- Comment box -->
-    </div>
+    </table>
     <br>
-    <hr class="comment" color="#E0E0E0">
+    <hr class="border" color="#E0E0E0">
     <br>
-    <div class="main comment_box">
-      <div>Please leave a comment:</div>
-      <form class="main" method="post">
-        <textarea name="comment" rows="3" cols="100"></textarea>
-        <input type="submit" value="Comment">
+    <div class="main">
+      <div>Comment:</div>
+      <form method="post">
+        <textarea class="comment_box" name="comment" rows="3"></textarea><br>
+        <input type="submit" value="Add">
       </form>
+    </div>
   </body>
 </html>

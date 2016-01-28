@@ -3,9 +3,15 @@ import jinja2
 import cgi
 import urllib
 from google.appengine.ext import ndb
+from datetime import datetime
 
-env = jinja2.Environment(loader=jinja2.PackageLoader("intro", "templates"),
+env = jinja2.Environment(loader=jinja2.PackageLoader("intro"),
                          autoescape=True,)
+
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S.%f'
+
+def get_lesson_key(lesson="default"):
+	return ndb.Key("Lesson", lesson)
 
 def get_lesson_page(lesson_number):
 	return "lesson"+lesson_number+".html"
@@ -29,14 +35,16 @@ class NotesPage(PageHandler):
 	def get(self):
 		self.render_with_comment(get_lesson_page(self.request.get("lesson")))
 
-    # FIXME: Doesn't redirect very well....
 	def post(self):
-		comment = Comment(alias="Anonymous",
+		lesson = self.request.get("lesson")
+		comment = Comment(parent=get_lesson_key(lesson),
+						  alias="Anonymous",
 						  comment=self.request.get("comment"))
 		comment.put()
 		self.redirect("/notes?lesson="+self.request.get("lesson"))
 
 	def render_with_comment(self, html):
+		lesson = self.request.get("lesson")
 		response = self.render_str(html)
 
 		comment_start = response.find("<!-- Comments -->")
@@ -46,12 +54,29 @@ class NotesPage(PageHandler):
 		comments = response[comment_start:comment_end]
 		textarea = response[comment_end:]
 
-		for comment in Comment.query().order(Comment.date).fetch():
-			comments += "<p>"+comment.comment+"</p>"
+		comment_list = Comment.query(ancestor=get_lesson_key(lesson)).order(Comment.date).fetch()
+
+		if comment_list:
+			for comment in comment_list:
+				template = env.get_template("comment.html")
+				formatted_date = comment.date.strftime("%Y-%m-%d %H:%M:%S")
+				comments += template.render({"comment": comment.comment, "simple_date": formatted_date,
+											 "lesson": self.request.get("lesson"),
+											 "date": comment.date})
+		else:
+			comments += env.get_template("no_comments.html").render()
 
 		self.write(notes+comments+textarea)
 
-# Implement comment class
+class Delete(PageHandler):
+	def post(self):
+		lesson = self.request.get("lesson")
+		date_string = self.request.get("date")
+		date = datetime.strptime(date_string, DATE_FORMAT)
+		comment = Comment.query(ancestor=get_lesson_key(lesson)).filter(Comment.date == date).fetch()[0]
+		comment.key.delete()
+		self.redirect("/notes?"+urllib.urlencode({"lesson": lesson}))
+
 class Comment(ndb.Model):
 	alias = ndb.StringProperty()
 	date = ndb.DateTimeProperty(auto_now=True)
@@ -61,4 +86,5 @@ class Comment(ndb.Model):
 app = webapp2.WSGIApplication([
 	('/', MainPage),
 	('/notes', NotesPage),
+	('/delete', Delete),
 	], debug=True)

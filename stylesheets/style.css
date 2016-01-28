@@ -105,12 +105,36 @@ td {
 	background-color: #F0F4C3;
 }
 
-.comment {
+.border {
 	width: 80%
 }
 
-.comment_box {
+.comment_table {
+	width: 100%
+}
+.comment_cell {
 	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	border: 1px solid #F5F5F5;
+	color: #009688;
+	border-color: #009688;
+	background-color: #E0F2F1;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	height: 100%;
+}
+
+.item:nth-child(n+2) {
+	font-size: 80%;
+}
+
+.comment_delete {
+	width: 100%;
+}
+
+.comment_box {
+	width: 100%
 }
 
 .root_bg {
