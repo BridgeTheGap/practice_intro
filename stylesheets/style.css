@@ -120,8 +120,8 @@ td {
 	color: #009688;
 	border-color: #009688;
 	background-color: #E0F2F1;
-	margin-top: 8px;
-	margin-bottom: 8px;
+	margin-top: 4px;
+	margin-bottom: 4px;
 	height: 100%;
 }
 
@@ -135,6 +135,10 @@ td {
 
 .comment_box {
 	width: 100%
+}
+
+.bottom-20 {
+	margin-bottom: 20px;
 }
 
 .root_bg {
