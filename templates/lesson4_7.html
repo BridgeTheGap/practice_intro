@@ -1,0 +1,65 @@
+{% extends "base_comments.html" %}
+{% block content %}
+
+<div class="title_box v_align_bottom e6_bg">
+  <h1 class="main v_margin_none white">Templates</h1>
+</div>
+
+<div class="main">
+  <h3 class="e6">Template?</h3>
+  <p>A library to build complicated strings(e.g. HTML)</p>
+
+  <h3 class="e6">Jinja2 (built into Google App Engine)</h3>
+  <p>Documentation: <a href="http://jinja.pocoo.org">jinja.pocoo.org</a></p>
+  <ol>
+    <li class="bottom-20">Getting environment<br>
+      <em>environment</em> = jinja2.environment(<em>parameters</em>)
+    </li>
+
+    <li class="bottom-20">Getting template<br>
+      <em>template</em>=environment.get_template(<em>file_name.html</em>)
+
+    <li class="bottom-20">Variable substitution<br>
+      <b>[Inside HTML]</b><br>
+      &#123;{ variable }&#125;<br>
+      <br>
+      <b>[Server code]</b><br>
+      template.render({<em>variable</em>: <em>value</em>})
+    </li>
+
+    <li class="bottom-20">Control flow<br>
+      <pre>
+&#123;% if name == "steve" %&#125;
+Hello, Steve!
+&#123;% else %&#125;
+who are you?
+&#123;% end if %&#125;</pre>
+    </li>
+
+    <li class="bottom-20">For loop syntax<br>
+      &#123;% for statement %&#125;
+    	&#123;% endfor &#125;
+    </li>
+  </ol>
+
+  <h3 class="e6">Tips for HTML templates</h3>
+  <ul>
+    <li>Automatically escape variables</li>
+    <li>Minimize code in templates</li>
+    <li>Minimize HTML in server code</li>
+  </ul>
+
+  <h3 class="e6">Template Inheritance</h3>
+  <ul class="tab">
+    <li>&#123;% extends "base.html" %&#125;</li>
+    <li>&#123;% block content %&#125;</li>
+    <li>&#123;% endblock %&#125;</li>
+  </ul>
+</div>
+
+<div class="back e6_bg">
+  <a class="main white" href="/">Back to Main</a>
+</div>
+
+
+{% endblock %}

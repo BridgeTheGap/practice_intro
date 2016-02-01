@@ -1,0 +1,92 @@
+{% extends "base_comments.html" %}
+{% block content %}
+
+<div class="title_box v_align_bottom e7_bg">
+  <h1 class="v_margin_none main white">Databases</h1>
+</div>
+
+<div class="main">
+  <h3 class="e7">Tables</h3>
+  <ul>
+    <li>Comprises columns and rows.</li>
+    <li>Columns are the type of data stored (Definition of the type of data).</li>
+    <li>Rows are an entry of that data.</li>
+  </ul>
+
+  <h3 class="e7">Types of databases</h3>
+  <ul>
+    <li>Relational(SQL Tables):
+      <ul>
+        <li>PostgreSQL</li>
+    		<li>MySQL</li>
+    		<li>SQLite</li>
+    		<li>Oracle</li>
+      </ul>
+    </li>
+
+    <li>GAE Datastore</li>
+    <li>Dynamo (by Amazon)</li>
+
+    <li>NoSQL
+      <ul>
+    		<li>Mongo</li>
+    		<li>Couch</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 class="e7">SQL (Structured Query Language)</h3>
+  <ul>
+    <li>A language for expressing queries</li>
+    <li>Invented in the 1970s</li>
+    <li>Example:
+      <ul class="tab">
+		    <li>SELECT * FROM links WHERE id = 5;</li>
+    		<li>"SELECT *"		Fetch data from all columns</li>
+    		<li>"FROM links"	Which table to fetch from</li>
+		    <li>"WHERE id = 5"	Constraints (which rows to return)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 class="e7">Tables, Indexes, and Trees</h3>
+  <ul>
+    <li>Table: "CREATE TABLE table_name FROM (column1 type1, column2 type2, ...)"</li>
+    <li>Inserting rows: "INSERT INTO table_name VALUES (value1, value2, ...)"</li>
+  </ul>
+  <ul>
+    <li>Index: "CREATE INDEX index_name ON table_name(column)</li>
+    <li>Looking up a table takes longer than looking up an index (hashtable)</li>
+  </ul>
+
+  <h3 class="e7">ACID</h3>
+  <ul>
+    <li>Atomicity: all parts of a transaction succeed or fail together</li>
+    <li>Consistency: the database will aways be consistent</li>
+    <li>Isolation: no transaction can interfere with another's</li>
+    <li>Durability: once the transaction is committed, it won't be lost</li>
+  </ul>
+
+  # Examples of failure to achieve ACID in Monetor
+  <ul>
+  	<li>Atomicity: Money is withdrawn from, but not deposited to</li>
+    <li>Consistency: Same transaction sometimes fails</li>
+    <li>Durabiity: Transaction data is lost</li>
+  </ul>
+
+  <h3 class="e7">GAE Datastore</h3>
+  Entities
+  <ul>
+		<li>similar to tables</li>
+		<li>columns are not fixed</li>
+		<li>all have an ID field (manual/auto)</li>
+		<li>parents/ancestors</li>
+  </ul>
+	For further information on GAE Datastore, refer to lesson4/guestbook
+</div>
+
+<div class="back e7_bg">
+  <a class="main white" href="/">Back to Main</a>
+</div>
+
+{% endblock %}

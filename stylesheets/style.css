@@ -166,11 +166,11 @@ td {
 }
 
 .e3_bg {
-	background-color: #FF9800;
+	background-color: #FD7F28;
 }
 
 .e3 {
-	color: #FF9800;
+	color: #FD7F28;
 }
 
 .e4_bg {
@@ -187,6 +187,22 @@ td {
 
 .e5 {
 	color: #C0CA33;
+}
+
+.e6_bg {
+	background-color: #8BC34A;
+}
+
+.e6 {
+	color: #8BC34A;
+}
+
+.e7_bg {
+	background-color: #4CAF50;
+}
+
+.e7 {
+	color: #4CAF50;
 }
 
 .white {
